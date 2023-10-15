@@ -1,0 +1,35 @@
+# Dependency directories
+node_modules/
+
+# Compiled output
+build/
+dist/
+
+# Environment variables
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Cache and log files
+yarn-error.log
+npm-debug.log
+
+# Editor-specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files to ignore when publishing to npm
+.npmignore
