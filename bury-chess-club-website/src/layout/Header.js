@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import Logo from '../assets/bury-chess-club-logo.jpg';
 
 class Header extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class Header extends React.Component {
     render() {
         return (
             <header>
+                <image src={Logo} alt="Bury Chess Club Logo" />
                 <div id={"navbar"}>
                     <h1>Bury Chess Club</h1>
                     <nav id={"navigation"}>
