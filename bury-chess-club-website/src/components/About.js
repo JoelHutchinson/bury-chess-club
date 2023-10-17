@@ -21,6 +21,9 @@ class About extends React.Component {
                     challenges this ancient game presents.
                 </p>
                 <img id={"league-match-image"} src={LeagueMatchImage} alt={"Bury chess club members playing a league match."} />
+                <div className={"how-to-join"}>
+                    <h2>How to join</h2>
+                </div>
             </div>
         );
     }

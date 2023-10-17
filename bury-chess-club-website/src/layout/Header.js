@@ -26,7 +26,7 @@ class Header extends React.Component {
                     </nav>
                     <div id={"social-icons"}>
                         <a className={"social-icon"} href={'https://www.facebook.com/BuryChessClub/'} target={'_blank'}><i className={'fa fa-facebook'}></i></a>
-                        <a className={"social-icon"} href={'https://www.chess.com/club/bury-chess-club'} target={'_blank'}><i className={'fa fa-instagram'}></i></a>
+                        <a className={"social-icon"} href={'https://www.chess.com/club/bury-chess-club'} target={'_blank'}><i className={'fa fa-twitter'}></i></a>
                     </div>
                 </div>
             </header>

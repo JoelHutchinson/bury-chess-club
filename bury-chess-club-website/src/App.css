@@ -28,6 +28,11 @@ h2 {
 
 p {
   text-align: justify;
+  font-size: 1.2rem;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 /* Header */
