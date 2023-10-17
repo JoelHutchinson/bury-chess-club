@@ -8,7 +8,10 @@ class Footer extends React.Component {
     render() {
         return (
             <footer>
-                <p>Footer</p>
+                <p>
+                    Bury Sports Club<br />
+                    BL9 9JX
+                </p>
             </footer>
         );
     }

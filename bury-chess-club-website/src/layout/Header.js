@@ -1,5 +1,4 @@
 import React from 'react';
-import '../App.css';
 import Logo from '../assets/bury-chess-club-logo.jpg';
 
 class Header extends React.Component {
@@ -10,9 +9,9 @@ class Header extends React.Component {
     render() {
         return (
             <header>
-                <image src={Logo} alt="Bury Chess Club Logo" />
+                <img id={"logo-image"} src={Logo} alt="Bury Chess Club Logo" />
                 <div id={"navbar"}>
-                    <h1>Bury Chess Club</h1>
+                    <h1 id={"club-name-heading"}>Bury Chess Club</h1>
                     <nav id={"navigation"}>
                         <ul id={"navigation-list"}>
                             <li className={"navigation-item"}>
@@ -20,6 +19,9 @@ class Header extends React.Component {
                             </li>
                             <li className={"navigation-item"}>
                                 <a className={"navigation-link"} href={'/about'}>About</a>
+                            </li>
+                            <li className={"navigation-item"}>
+                                <a className={"navigation-link"} href={'/contact'}>Contact</a>
                             </li>
                         </ul>
                     </nav>
