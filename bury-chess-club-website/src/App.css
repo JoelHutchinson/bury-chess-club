@@ -1,11 +1,28 @@
+/* General */
+
 .App {
   --dark-text-color: #272932;
-  --moderate-background-color: #828489;
+  --moderate-background-color: #313334;
   background-color: white;
   color: #272932;
   text-align: center;
   display: flex;
   flex-direction: column;
+  background-color: var(--moderate-background-color);
+}
+
+.page {
+  width: 80%;
+  margin: auto auto;
+  background-color: white;
+}
+
+h2 {
+  text-align: left;
+}
+
+p {
+  text-align: justify;
 }
 
 /* Header */
@@ -24,6 +41,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   background-color: var(--moderate-background-color);
   gap: 25px;
 }
@@ -42,7 +60,7 @@ header {
 .navigation-item {
   background-color: white;
   padding: 5px 25px;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 15px;
 }
 
 .navigation-link {
@@ -60,16 +78,16 @@ li {
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-
+  background-color: white;
+  height: 80%;
+  margin-right: 5px;
 }
 
 .social-icon {
   font-size: 2rem;
   text-decoration: none;
   color: var(--dark-text-color);
-  background-color: white;
-  width: 40px;
-  height: 35px;
+  padding: 3px;
   border-radius: 5px;
 }
 
@@ -94,4 +112,11 @@ footer {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+/* About page */
+
+#league-match-image {
+  width: 600px;
+  height: 400px;
 }

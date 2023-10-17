@@ -7,8 +7,9 @@ class Contact extends React.Component {
 
     render() {
         return (
-            <div>
-                <p>Contact us here.</p>
+            <div className={"contact"}>
+                <h2>Venue</h2>
+                <p>A welcoming chess club in the borough of Bury. For all ages and abilities whether casual or competitive.</p>
             </div>
         );
     }

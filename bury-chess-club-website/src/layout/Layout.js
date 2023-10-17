@@ -8,11 +8,13 @@ import Footer from './Footer';
 const Layout = (props) => {
   return (
     <div className={"App"}>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
+      <div className={"page"}>
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };
