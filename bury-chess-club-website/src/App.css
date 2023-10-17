@@ -1,10 +1,10 @@
 /* General */
 
 .App {
-  --dark-text-color: #272932;
-  --moderate-background-color: #313334;
+  --dark-text-color: #1d2d44;
+  --moderate-background-color: #1d2d44;
   background-color: white;
-  color: #272932;
+  color: var(--dark-text-color);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,12 @@
 .page {
   width: 80%;
   margin: auto auto;
+  padding: 1% 1%;
   background-color: white;
+}
+
+h1 {
+  font-size: 2rem;
 }
 
 h2 {
@@ -30,6 +35,14 @@ p {
 header {
   background-color: white;
   font-weight: bold;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1%;
 }
 
 #club-name-heading {
@@ -117,6 +130,7 @@ footer {
 /* About page */
 
 #league-match-image {
-  width: 600px;
-  height: 400px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
 }

@@ -9,16 +9,15 @@ class Header extends React.Component {
     render() {
         return (
             <header>
-                <img id={"logo-image"} src={Logo} alt="Bury Chess Club Logo" />
-                <h1 id={"club-name-heading"}>Bury Chess Club</h1>
+                <div className={"hero"}>
+                    <img id={"logo-image"} src={Logo} alt={"Bury Chess Club Logo"} />
+                    <h1 id={"club-name-heading"}>Bury Chess Club</h1>
+                </div>
                 <div id={"navbar"}>
                     <nav id={"navigation"}>
                         <ul id={"navigation-list"}>
                             <li className={"navigation-item"}>
-                                <a className={"navigation-link"} href={'/home'}>Home</a>
-                            </li>
-                            <li className={"navigation-item"}>
-                                <a className={"navigation-link"} href={'/about'}>About</a>
+                                <a className={"navigation-link"} href={'/about'}>About Us</a>
                             </li>
                             <li className={"navigation-item"}>
                                 <a className={"navigation-link"} href={'/contact'}>Contact</a>
