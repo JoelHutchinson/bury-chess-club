@@ -7,7 +7,7 @@ class About extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={"about-paragraph"}>
                 <p>This is what it's all about.</p>
             </div>
         );

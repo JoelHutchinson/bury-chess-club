@@ -55,6 +55,7 @@ li {
 }
 
 /* Error page */
+
 #error-page {
   display: flex;
   flex-direction: column;
