@@ -34,7 +34,7 @@ p {
 
 main {
   background-color: white;
-  border-radius: 20px;
+  border-radius: 15px;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -63,12 +63,8 @@ main {
 /* Header */
 
 header {
-  background-color: white;
-  font-weight: bold;
-}
-
-.hero {
   background-color: var(--moderate-background-color);
+  font-weight: bold;
   color: white;
   display: flex;
   flex-direction: row;
@@ -77,50 +73,30 @@ header {
   gap: 1%;
 }
 
-#club-name-heading {
-  margin-top: 5px;
-  margin-bottom: 15px;
-}
-
-#navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--moderate-background-color);
-  height: 60px;
-}
-
 #navigation {
-  padding-top: 2px;
+  
 }
 
 #navigation-list {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  gap: 30px;
-}
-
-.navigation-item {
-}
-
-.navigation-link:hover {
-  padding: 10px 25px;
-  border-radius: 20px;
-  background-color: var(--light-background-color);
+  gap: 10px;
 }
 
 .navigation-link {
-  height: 100%;
   color: white;
-  padding: 10px 25px;
+  padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
 }
 
+.navigation-link:hover {
+  background-color: var(--light-background-color);
+}
+
 .navigation-link-active {
-  padding: 10px 25px;
+  padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
   color: var(--dark-text-color);
@@ -128,7 +104,7 @@ header {
 }
 
 .navigation-link-pending {
-  padding: 10px 25px;
+  padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
   color: var(--dark-text-color);
