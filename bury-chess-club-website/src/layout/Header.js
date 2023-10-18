@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../assets/bury-chess-club-logo.jpg';
 
-import { NavLink } from 'react-router-dom'; // Import NavLink
+import { NavLink } from 'react-router-dom';
 
 class Header extends React.Component {
     constructor(props) {
@@ -36,6 +36,16 @@ class Header extends React.Component {
                                     }
                                 >
                                     Contact
+                                </NavLink>
+                            </li>
+                            <li className={"navigation-item"}>
+                                <NavLink
+                                    to="/competitions"
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "navigation-link-pending" : isActive ? "navigation-link-active" : "navigation-link"
+                                    }
+                                >
+                                    Club Competitions
                                 </NavLink>
                             </li>
                         </ul>

@@ -4,6 +4,7 @@ import './App.css';
 import Layout from './layout/Layout';
 import About from './components/About'
 import Contact from './components/Contact'
+import Competitions from './components/Competitions'
 
 import {
   createBrowserRouter,
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />
+      },
+      {
+        path: "competitions",
+        element: <Competitions />
       },
     ],
   },

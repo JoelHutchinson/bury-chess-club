@@ -25,25 +25,20 @@ class Contact extends React.Component {
                 <hr></hr>
                 <div className={"contacts-details"}>
                     <h2>Club Administration</h2>
-                    <table>
+                    <table id={"club-administration"}>
                         <tr>
-                            <th>Role</th>
-                            <th>Name</th>
-                            <th>Contact</th>
-                        </tr>
-                        <tr>
+                            <td className={"administrator-title"}>President</td>
                             <td>Dave Mccarthy</td>
-                            <td>President</td>
                             <td>dave@gmail.com</td>
                         </tr>
                         <tr>
+                            <td className={"administrator-title"}>Club Secretary</td>
                             <td>Jeremy Peach</td>
-                            <td>Club Secretary</td>
                             <td>jpeach_7@hotmail.com</td>
                         </tr>
                         <tr>
+                            <td className={"administrator-title"}>Treasurer</td>
                             <td>Anthony Lee</td>
-                            <td>Treasurer</td>
                             <td>anthony@gmail.com</td>
                         </tr>
                     </table>

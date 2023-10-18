@@ -190,3 +190,16 @@ footer p {
 
 /* Contact page */
 
+#club-administration {
+  text-align: left;
+  border-collapse: separate;
+}
+
+#club-administration td {
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+
+.administrator-title {
+  font-weight: bold;
+}
