@@ -1,23 +1,18 @@
 /* General */
-
-.App {
+.page {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+  gap: 15px;
+  margin: auto auto;
+  padding: 1% 1%;
   --dark-text-color: #1d2d44;
   --moderate-background-color: #1d2d44;
   --light-background-color: #283b58;
   background-color: white;
   color: var(--dark-text-color);
   background-color: var(--moderate-background-color);
-}
-
-.page {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: flex-start;
-  width: 80%;
-  margin: auto auto;
-  padding: 1% 1%;
-  background-color: white;
 }
 
 h1 {
@@ -37,6 +32,13 @@ p {
   font-weight: bold;
 }
 
+main {
+  background-color: white;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 /* Header */
 
 header {
@@ -45,6 +47,8 @@ header {
 }
 
 .hero {
+  background-color: var(--moderate-background-color);
+  color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -63,7 +67,6 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: var(--moderate-background-color);
-  gap: 25px;
   height: 60px;
 }
 
@@ -140,6 +143,8 @@ li {
   height: 100px;
   padding: 0;
   margin: 0;
+  border: 5px solid var(--moderate-background-color);
+  border-radius: 60px;
 }
 
 /* Footer */

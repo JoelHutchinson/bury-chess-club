@@ -7,14 +7,12 @@ import Footer from './Footer';
 
 const Layout = (props) => {
   return (
-    <div className={"App"}>
-      <div className={"page"}>
-        <Header />
-        <main>
-          <Outlet />
-        </main>
-        <Footer />
-      </div>
+    <div className={"page"}>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
 };
