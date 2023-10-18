@@ -21,10 +21,11 @@ class About extends React.Component {
                     you, with a passion for chess, to enhance their skills and enjoy the intellectual
                     challenges this ancient game presents.
                 </p>
-                <div className={"image-gallery"}>
+                <div id={"club-images"} className={"image-gallery"}>
                     <img id={"league-match-image"} src={LeagueMatchImage} alt={"Bury chess club members playing a league match."} />
                     <img id={"league-match-closeup-image"} src={LeagueMatchImageCloseUp} alt={"Other Bury chess club members playing a league match."} />
                 </div>
+                <hr></hr>
                 <div className={"how-to-join"}>
                     <h2>How to join</h2>
                 </div>

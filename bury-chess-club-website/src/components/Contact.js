@@ -17,11 +17,12 @@ class Contact extends React.Component {
                         Club night is <span className={"bold"}>Tuesday</span> at <span className={"bold"}>7:30pm</span>.<br></br>
                         All ages & abilities welcome.
                     </p>
-                    <div className={"image-gallery"}>
+                    <div id={"venue-images"} className={"image-gallery"}>
                         <img id={"club-exterior-image"} src={ClubExterior} alt={"An image of the Bury Sports Club from a distance."} />
                         <img id={"club-exterior-image"} src={ClubMap} alt={"An image of the Bury Sports Club from a distance."} />
                     </div>
                 </div>
+                <hr></hr>
                 <div className={"contacts-details"}>
                     <h2>Club Administration</h2>
                     <table>
