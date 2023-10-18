@@ -15,8 +15,7 @@ class About extends React.Component {
                 <div className={"about-the-club"}>
                     <h2>About the Club</h2>
                     <p>
-                        Bury Chess Club, located in Bury, United Kingdom with the postal code BL9 9JX,
-                        is a hub for chess enthusiasts in the region. The club provides a welcoming
+                        Bury Chess Club, located in borough of Bury, is a The club provides a welcoming
                         and engaging environment for chess players of all skill levels. Every Tuesday
                         at 7:30 PM, members and guests gather at the club to participate in friendly
                         matches, engage in chess discussions, and foster a sense of community among chess
@@ -33,7 +32,8 @@ class About extends React.Component {
                 <div className={"how-to-join"}>
                     <h2>How to join</h2>
                     <p>
-                        Discuss registration with one of our club administrators. Feel free to come down to our <NavLink to={"/contact"}>club night</NavLink> to play some games and discuss.
+                        Discuss registration with one of our club administrators. Feel free to come down to
+                        our <NavLink to={"/contact"}>club night</NavLink> to play some games and discuss membership.
                     </p>
                 </div>
             </div>

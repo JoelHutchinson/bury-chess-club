@@ -146,7 +146,11 @@ li {
 
 /* Footer */
 
+footer {
+}
+
 footer p {
+  color: white;
   font-weight: bold;
   text-align: center;
 }
