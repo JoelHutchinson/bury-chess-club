@@ -1,5 +1,6 @@
 import React from 'react';
 import LeagueMatchImage from '../assets/bury-league-match.jpg'
+import LeagueMatchImageCloseUp from '../assets/bury-league-match-closeup.jpg'
 
 class About extends React.Component {
     constructor(props) {
@@ -20,7 +21,10 @@ class About extends React.Component {
                     you, with a passion for chess, to enhance their skills and enjoy the intellectual
                     challenges this ancient game presents.
                 </p>
-                <img id={"league-match-image"} src={LeagueMatchImage} alt={"Bury chess club members playing a league match."} />
+                <div className={"image-gallery"}>
+                    <img id={"league-match-image"} src={LeagueMatchImage} alt={"Bury chess club members playing a league match."} />
+                    <img id={"league-match-closeup-image"} src={LeagueMatchImageCloseUp} alt={"Other Bury chess club members playing a league match."} />
+                </div>
                 <div className={"how-to-join"}>
                     <h2>How to join</h2>
                 </div>

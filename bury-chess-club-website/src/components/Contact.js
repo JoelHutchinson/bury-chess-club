@@ -1,4 +1,6 @@
 import React from 'react';
+import ClubExterior from '../assets/bury-sports-club-exterior.jpg'
+import ClubMap from '../assets/bury-sports-club-map.png'
 
 class Contact extends React.Component {
     constructor(props) {
@@ -8,12 +10,46 @@ class Contact extends React.Component {
     render() {
         return (
             <div className={"contact"}>
-                <h2>Venue</h2>
-                <p>
-                    We are located at the <a href={"http://www.burysportsclub.co.uk/"} target={"_blank"}>Bury Sports Club</a>.
-                    Club night is <span class="bold">Tuesday</span> at <span class="bold">7:30pm</span>.<br></br>
-                    For all ages and abilities, whether casual or competitive.
-                </p>
+                <div className={"venue"}>
+                    <h2>Venue</h2>
+                    <p>
+                        We are located at the <a href={"http://www.burysportsclub.co.uk/"} target={"_blank"}>Bury Sports Club</a>.
+                        Club night is <span className={"bold"}>Tuesday</span> at <span className={"bold"}>7:30pm</span>.<br></br>
+                        All ages & abilities welcome.
+                    </p>
+                    <div className={"image-gallery"}>
+                        <img id={"club-exterior-image"} src={ClubExterior} alt={"An image of the Bury Sports Club from a distance."} />
+                        <img id={"club-exterior-image"} src={ClubMap} alt={"An image of the Bury Sports Club from a distance."} />
+                    </div>
+                </div>
+                <div className={"contacts-details"}>
+                    <h2>Club Administration</h2>
+                    <table>
+                        <tr>
+                            <th>Role</th>
+                            <th>Name</th>
+                            <th>Contact</th>
+                        </tr>
+                        <tr>
+                            <td>Dave Mccarthy</td>
+                            <td>President</td>
+                            <td>dave@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Jeremy Peach</td>
+                            <td>Club Secretary</td>
+                            <td>jpeach_7@hotmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Anthony Lee</td>
+                            <td>Treasurer</td>
+                            <td>anthony@gmail.com</td>
+                        </tr>
+                    </table>
+                    <p>         
+
+                    </p>
+                </div>
             </div>
         );
     }
