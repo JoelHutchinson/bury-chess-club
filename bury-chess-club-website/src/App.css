@@ -3,6 +3,7 @@
 .App {
   --dark-text-color: #1d2d44;
   --moderate-background-color: #1d2d44;
+  --light-background-color: #283b58;
   background-color: white;
   color: var(--dark-text-color);
   text-align: center;
@@ -62,6 +63,7 @@ header {
   align-items: center;
   background-color: var(--moderate-background-color);
   gap: 25px;
+  height: 60px;
 }
 
 #navigation {
@@ -76,14 +78,36 @@ header {
 }
 
 .navigation-item {
-  background-color: white;
-  padding: 5px 25px;
-  border-radius: 15px;
+}
+
+.navigation-link:hover {
+  padding: 10px 25px;
+  border-radius: 20px;
+  background-color: var(--light-background-color);
 }
 
 .navigation-link {
+  height: 100%;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.navigation-link-active {
+  padding: 10px 25px;
+  border-radius: 20px;
   text-decoration: none;
   color: var(--dark-text-color);
+  background-color: white;
+}
+
+.navigation-link-pending {
+  padding: 10px 25px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--dark-text-color);
+  background-color: blue;
 }
 
 li {
@@ -118,8 +142,9 @@ li {
 
 /* Footer */
 
-footer {
+footer p {
   font-weight: bold;
+  text-align: center;
 }
 
 /* Error page */
