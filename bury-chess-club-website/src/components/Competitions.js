@@ -9,7 +9,7 @@ class Competitions extends React.Component {
     render() {
         return (
             <div className={"competitions"}>
-                <p>Club Competitions</p>
+                <h2>Club Competitions</h2>
             </div>
         );
     }

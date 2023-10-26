@@ -15,11 +15,10 @@ class About extends React.Component {
                 <div className={"about-the-club"}>
                     <h2>About the Club</h2>
                     <p>
-                        Bury Chess Club, located in borough of Bury, is a The club provides a welcoming
+                        Bury Chess Club, located in borough of Bury provides a welcoming
                         and engaging environment for chess players of all skill levels. Every Tuesday
-                        at 7:30 PM, members and guests gather at the club to participate in friendly
-                        matches, engage in chess discussions, and foster a sense of community among chess
-                        aficionados. Bury Chess Club offers a unique opportunity for individuals like
+                        at 7:30 PM, members gather at the club to participate in friendly
+                        matches, engage in chess discussions. Bury Chess Club offers a unique opportunity for individuals like
                         you, with a passion for chess, to enhance their skills and enjoy the intellectual
                         challenges this ancient game presents.
                     </p>
