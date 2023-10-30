@@ -1,18 +1,22 @@
 /* General */
 .page {
+  --theme-color-dark: #1d2d44;
+  --theme-color-moderate: #1d2d44;
+  --theme-color-light: #283b58;
+  background-color: var(--theme-color-dark);
+}
+
+.inner-page {
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: flex-start;
-  gap: 15px;
+  gap: 20px;
+  width: 80%;
   margin: auto auto;
   padding: 1% 1%;
-  --dark-text-color: #1d2d44;
-  --moderate-background-color: #1d2d44;
-  --light-background-color: #283b58;
-  background-color: white;
-  color: var(--dark-text-color);
-  background-color: var(--moderate-background-color);
+  color: var(--theme-color-dark);
+  background-color: var(--theme-color-dark);
 }
 
 h1 {
@@ -46,16 +50,16 @@ main {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 16px;
-  max-width: 1400px;
+  gap: 24px;
+  max-width: 2100px;
   margin: 0 0;
   padding: 20px 10px;
 }
 
 .image-gallery img {
   width: 100%;
-  max-width: 350px;
-  height: 300px;
+  max-width: 525px;
+  height: 450px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -63,7 +67,7 @@ main {
 /* Header */
 
 header {
-  background-color: var(--moderate-background-color);
+  background-color: var(--theme-color-dark);
   font-weight: bold;
   color: white;
   display: flex;
@@ -92,14 +96,14 @@ header {
 }
 
 .navigation-link:hover {
-  background-color: var(--light-background-color);
+  background-color: var(--theme-color-light);
 }
 
 .navigation-link-active {
   padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
-  color: var(--dark-text-color);
+  color: var(--theme-color-dark);
   background-color: white;
 }
 
@@ -107,7 +111,7 @@ header {
   padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
-  color: var(--dark-text-color);
+  color: var(--theme-color-dark);
   background-color: blue;
 }
 
@@ -130,7 +134,7 @@ li {
 .social-icon {
   font-size: 2rem;
   text-decoration: none;
-  color: var(--dark-text-color);
+  color: var(--theme-color-dark);
   padding: 3px;
   border-radius: 5px;
 }
@@ -140,7 +144,7 @@ li {
   height: 100px;
   padding: 0;
   margin: 0;
-  border: 5px solid var(--moderate-background-color);
+  border: 5px solid var(--theme-color-dark);
   border-radius: 60px;
 }
 
