@@ -26,21 +26,25 @@ class Contact extends React.Component {
                 <div className={"contacts-details"}>
                     <h2>Club Administration</h2>
                     <table id={"club-administration"}>
-                        <tr>
-                            <td className={"administrator-title"}>President</td>
-                            <td>Dave Mccarthy</td>
-                            <td>dave@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td className={"administrator-title"}>Club Secretary</td>
-                            <td>Jeremy Peach</td>
-                            <td>jpeach_7@hotmail.com</td>
-                        </tr>
-                        <tr>
-                            <td className={"administrator-title"}>Treasurer</td>
-                            <td>Anthony Lee</td>
-                            <td>anthony@gmail.com</td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <td className={"administrator-title"}>President</td>
+                                <td>Dave Mccarthy</td>
+                                <td>dave@gmail.com</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className={"administrator-title"}>Club Secretary</td>
+                                <td>Jeremy Peach</td>
+                                <td>jpeach_7@hotmail.com</td>
+                            </tr>
+                            <tr>
+                                <td className={"administrator-title"}>Treasurer</td>
+                                <td>Anthony Lee</td>
+                                <td>anthony@gmail.com</td>
+                            </tr>
+                        </tbody>
                     </table>
                     <p>         
 

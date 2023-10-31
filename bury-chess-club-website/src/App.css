@@ -1,9 +1,10 @@
 /* General */
 .page {
   --theme-color-dark: #1d2d44;
-  --theme-color-moderate: #1d2d44;
-  --theme-color-light: #283b58;
-  background-color: var(--theme-color-dark);
+  --theme-color-moderate: #283b58;
+  --theme-color-light: rgb(255, 255, 255);
+  --theme-color-text: white;
+  background-color: var(--theme-color-moderate);
 }
 
 .inner-page {
@@ -25,11 +26,26 @@ h1 {
 
 h2 {
   text-align: left;
+  
 }
 
 p {
   text-align: justify;
   font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  word-spacing: 2px;
+  line-height: 1.1;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--theme-color-moderate)
+}
+
+.text {
+  font-size: 1.8rem;
+  
 }
 
 .bold {
@@ -37,7 +53,7 @@ p {
 }
 
 main {
-  background-color: white;
+  background-color: var(--theme-color-light);
   border-radius: 15px;
   padding-left: 15px;
   padding-right: 15px;
@@ -69,13 +85,15 @@ main {
 header {
   background-color: var(--theme-color-dark);
   font-weight: bold;
-  color: white;
+  color: var(--theme-color-light);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   gap: 1%;
 }
+
+
 
 #navigation {
   
@@ -89,14 +107,14 @@ header {
 }
 
 .navigation-link {
-  color: white;
+  color: var(--theme-color-light);
   padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
 }
 
 .navigation-link:hover {
-  background-color: var(--theme-color-light);
+  background-color: var(--theme-color-moderate);
 }
 
 .navigation-link-active {
@@ -104,7 +122,7 @@ header {
   border-radius: 20px;
   text-decoration: none;
   color: var(--theme-color-dark);
-  background-color: white;
+  background-color: var(--theme-color-light);
 }
 
 .navigation-link-pending {
@@ -120,14 +138,14 @@ li {
 }
 
 #social-icons {
+  margin-left: auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
-  background-color: white;
+  gap: 15px;
+  background-color: var(--theme-color-light);
   height: 80%;
-  margin-right: 5px;
   border-radius: 10px;
 }
 
@@ -148,13 +166,18 @@ li {
   border-radius: 60px;
 }
 
+#chess-com-logo {
+  filter: brightness(100%) saturate(100%) hue-rotate(deg); /* Default, can be adjusted if needed */
+  fill: var(--theme-color-dark); /* Apply the color from your CSS variable */
+}
+
 /* Footer */
 
 footer {
 }
 
 footer p {
-  color: white;
+  color: var(--theme-color-light);
   font-weight: bold;
   text-align: center;
 }

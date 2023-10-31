@@ -20,9 +20,6 @@ class About extends React.Component {
                         at the club every <span className='bold'>Tuesday at 7:30 PM</span> to participate in friendly
                         matches and socialize. The club has members of all ages including
                         a number of junior players, teenagers, young adults and adults.
-                        Bury Chess Club offers a unique opportunity for individuals like
-                        you, with a passion for chess, to enhance their skills and enjoy the intellectual
-                        challenges this ancient game presents.
 
                         
                     </p>
