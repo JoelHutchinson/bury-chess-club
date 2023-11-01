@@ -80,6 +80,13 @@ main {
   border-radius: 10px;
 }
 
+hr {
+  border: var(--theme-color-moderate) solid 3px;
+  border-radius: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
 /* Header */
 
 header {

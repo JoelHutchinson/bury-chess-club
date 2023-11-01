@@ -17,7 +17,8 @@ function PGNViewer(props) {
         showResult: true,
         boardSize: '340',
         showFen: true,
-        pieceStyle: 'merida'
+        pieceStyle: 'merida',
+        layout: 'left'
       }
     )
   })
@@ -26,3 +27,5 @@ function PGNViewer(props) {
     <div id={id}></div>
   )
 }
+
+export default PGNViewer;
