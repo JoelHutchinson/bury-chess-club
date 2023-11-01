@@ -45,8 +45,8 @@ class Header extends React.Component {
                     </ul>
                 </nav>
                 <div id={"social-icons"}>
-                    <a className={"social-icon"} href={'https://www.facebook.com/BuryChessClub/'} target={'_blank'} rel={"noopener noreferrer"}><i className={'fa fa-facebook'}></i></a>
-                    <a className={"social-icon"} href={'https://www.chess.com/club/bury-chess-club'} target={'_blank'} rel={"noopener noreferrer"}><i className={'fa fa-chess-pawn'}>♟</i></a>
+                    <a className={"social-icon"} href={'https://www.facebook.com/BuryChessClub/'} target={'_blank'} rel={"noopener noreferrer"}><i id={"facebook-icon"}>f</i></a>
+                    <a className={"social-icon"} href={'https://www.chess.com/club/bury-chess-club'} target={'_blank'} rel={"noopener noreferrer"}><i id={"pawn-icon"}>♟</i></a>
                 </div>
             </header>
         );

@@ -18,7 +18,8 @@ function PGNViewer(props) {
         boardSize: '340',
         showFen: true,
         pieceStyle: 'merida',
-        layout: 'left'
+        layout: 'left',
+        theme: 'blue'
       }
     )
   })
