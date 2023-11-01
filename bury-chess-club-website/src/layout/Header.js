@@ -11,7 +11,11 @@ class Header extends React.Component {
     render() {
         return (
             <header>
-                <img id={"logo-image"} src={Logo} alt={"Bury Chess Club Logo"} />
+                <NavLink
+                to="/about">
+                    <img id={"logo-image"} src={Logo} alt={"Bury Chess Club Logo"} />
+                </NavLink>
+                
                 <h1 id={"club-name-heading"}>Bury Chess Club</h1>
                 <nav id={"navigation"}>
                     <ul id={"navigation-list"}>

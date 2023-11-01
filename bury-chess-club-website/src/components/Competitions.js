@@ -12,7 +12,7 @@ class Competitions extends React.Component {
                 
                 <div className={"winter-club-championship"}>
                     <h2>Winter Club Championship</h2>
-                    <p>All games to be completed by DATE. Time control:
+                    <p>All games to be completed by 01/02/24. Time control:
                         <span className={"bold"}> 75 minutes + 15 second increment per move. </span>
                         Starting numbers have been determined by random draw. The
                         Trophy will be awarded to the player
