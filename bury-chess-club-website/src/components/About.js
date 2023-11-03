@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { fetchData } from './DataService';
 
 import LeagueMatchImage from '../assets/bury-league-match.jpg'
 import LeagueMatchImageCloseUp from '../assets/bury-league-match-closeup.jpg'
@@ -7,6 +8,21 @@ import LeagueMatchImageCloseUp from '../assets/bury-league-match-closeup.jpg'
 class About extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            content: null   
+        };
+    }
+
+    componentDidMount() {
+        // Fetch About data when component mounts.
+        fetchData('about')
+            .then(data => {
+                this.setState({content: data})
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
     render() {

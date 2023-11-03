@@ -5,6 +5,8 @@ import Layout from './layout/Layout';
 import About from './components/About'
 import Contact from './components/Contact'
 import Competitions from './components/Competitions'
+import Privacy from './components/Privacy'
+import Cookies from './components/Cookies'
 
 import {
   createBrowserRouter,
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: "competitions",
         element: <Competitions />
+      },
+      {
+        path: "privacy",
+        element: <Privacy />
+      },
+      {
+        path: "cookies",
+        element: <Cookies />
       },
     ],
   },

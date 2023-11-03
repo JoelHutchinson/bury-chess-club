@@ -200,6 +200,14 @@ footer p {
   text-align: center;
 }
 
+.notices {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
 /* Error page */
 
 #error-page {

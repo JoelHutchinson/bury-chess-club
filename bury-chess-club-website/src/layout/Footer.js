@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 class Footer extends React.Component {
     constructor(props) {
@@ -8,10 +10,18 @@ class Footer extends React.Component {
     render() {
         return (
             <footer>
-                <p>
-                    Bury Sports Club<br />
-                    BL9 9JX
-                </p>
+                <div className={'notices'}>
+                    <p>Copyright © 2023</p>
+                    <NavLink
+                    to="/privacy">
+                        Privacy Policy
+                    </NavLink>
+                    <NavLink
+                    to="/cookies">
+                        Cookies
+                    </NavLink>
+                </div>
+                
             </footer>
         );
     }
