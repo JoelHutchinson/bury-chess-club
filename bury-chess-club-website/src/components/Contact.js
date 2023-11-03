@@ -46,9 +46,6 @@ class Contact extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <p>         
-
-                    </p>
                 </div>
             </div>
         );
