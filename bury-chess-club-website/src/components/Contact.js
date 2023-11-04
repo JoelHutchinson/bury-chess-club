@@ -2,9 +2,15 @@ import React from 'react';
 import ClubExterior from '../assets/bury-sports-club-exterior.jpg'
 import ClubMap from '../assets/bury-sports-club-map.png'
 
+import { fetchData } from './DataService';
+
 class Contact extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        
     }
 
     render() {

@@ -22,11 +22,11 @@
 
 h1 {
   font-size: 2rem;
+  text-align: left;
 }
 
-h2 {
+h2, h3 {
   text-align: left;
-  
 }
 
 p {
@@ -205,7 +205,11 @@ footer p {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 25px;
+}
+
+.notices a {
+  color: var(--theme-color-light);
 }
 
 /* Error page */
