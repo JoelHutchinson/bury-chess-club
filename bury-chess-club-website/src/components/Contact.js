@@ -7,9 +7,28 @@ import { fetchData } from './DataService';
 class Contact extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            administrators: []
+        }
     }
 
     componentDidMount() {
+        // Fetch About data when component mounts.
+        fetchData('administrators')
+            .then(data => {
+                this.setState({administrators: data.map(admin => {
+                    return {
+                        title: admin.acf.title,
+                        name: admin.acf.name,
+                        email: admin.acf.email_address
+                    };
+                })});
+                console.log(this.state.administrators);
+            })
+            .catch(error => {
+                console.log(error);
+            });
         
     }
 
@@ -32,24 +51,14 @@ class Contact extends React.Component {
                 <div className={"contacts-details"}>
                     <h2>Club Administration</h2>
                     <table id={"club-administration"}>
-                        <thead>
-                            <tr>
-                                <td className={"administrator-title"}>President</td>
-                                <td>Dave Mccarthy</td>
-                                <td>dave@gmail.com</td>
-                            </tr>
-                        </thead>
                         <tbody>
-                            <tr>
-                                <td className={"administrator-title"}>Club Secretary</td>
-                                <td>Jeremy Peach</td>
-                                <td>jpeach_7@hotmail.com</td>
-                            </tr>
-                            <tr>
-                                <td className={"administrator-title"}>Treasurer</td>
-                                <td>Anthony Lee</td>
-                                <td>anthony@gmail.com</td>
-                            </tr>
+                            {this.state.administrators.map(admin => {
+                                return (<tr>
+                                    <td className={"administrator-title"}>{admin.title}</td>
+                                    <td>{admin.name}</td>
+                                    <td>{admin.email}</td>
+                                </tr>);
+                            })}
                         </tbody>
                     </table>
                 </div>

@@ -2,11 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 
 import Layout from './layout/Layout';
-import About from './components/About'
-import Contact from './components/Contact'
-import Competitions from './components/Competitions'
-import Privacy from './components/Privacy'
-import Cookies from './components/Cookies'
+import About from './components/About';
+import Contact from './components/Contact';
+import Competitions from './components/Competitions';
+import Games from './components/Games';
+import Privacy from './components/Privacy';
+import Cookies from './components/Cookies';
 
 import {
   createBrowserRouter,
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "competitions",
         element: <Competitions />
+      },
+      {
+        path: "games",
+        element: <Games />
       },
       {
         path: "privacy",

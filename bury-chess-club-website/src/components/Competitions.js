@@ -7,59 +7,52 @@ class Competitions extends React.Component {
         super(props);
 
         this.state = {
-            games: []
+            games: [],
+            competitions: []
         };
     }
 
     componentDidMount() {
-        // Fetch About data when component mounts.
-        fetchData('games')
-            .then(data => {
-                this.setState({games: data.map(game => {
-                    return {
-                        date: game.acf.date_played,
-                        pgn: game.acf.pgn,
-                        whitePlayer: game.acf.white_player_name,
-                        blackPlayer: game.acf.black_player_name,
-                        event: game.acf.event
-                    };
-                })});
-                console.log(this.state.gamePGNs);
-            })
-            .catch(error => {
-                console.log(error);
-            });
+        // Fetch competition data when component mounts.
+        fetchData('competitions')
+        .then(data => {
+            this.setState({competitions: data.map(competition => {
+                return {
+                    startDate: competition.acf.start_date,
+                    endDate: competition.acf.end_date,
+                    name: competition.acf.competition_name,
+                    timeControlMinutes: competition.acf.time_control_minutes,
+                    timeControlIncrement: competition.acf.time_control_increment
+                };
+            })});
+        })
+        .catch(error => {
+            console.log(error);
+        });
         
     }
 
     render() {
         return (
             <div className={"competitions"}>
-                
-                <div className={"winter-club-championship"}>
-                    <h2>Winter Club Championship</h2>
-                    <p>All games to be completed by 01/02/24. Time control:
-                        <span className={"bold"}> 75 minutes + 15 second increment per move. </span>
-                        Starting numbers have been determined by random draw. The
-                        Trophy will be awarded to the player
-                        with the highest point score. Please note that points
-                        scored against players completing fewer than half their
-                        games are ineligble for determining placings. In case of a tie, the
-                        Sonneborn-Berger system will be used for tiebreaking.</p>
-                </div>
-                <hr></hr>
-                <div className={"games-of-the-month"}>
-                    <h2>Games of the Month</h2>
-                    {this.state.games.map(game => {
-                        return (
-                            <div>
-                                <h3>{game.date}: {game.whitePlayer} vs {game.blackPlayer} ({game.event})</h3>
-                                <PGNViewer>{game.pgn}</PGNViewer>
-                            </div>
-                        );
-                    })}
-                    
-                </div>
+                {this.state.competitions.map(competition => {
+                    return(<div className={"club-competition"}>
+                        <h2>{competition.name}</h2>
+                        <p>All games to be completed by <span className={"bold"}>{competition.endDate}</span></p>
+                        <p>
+                            Time control: <span className={"bold"}>{competition.timeControlMinutes}
+                            minutes + {competition.timeControlIncrement} second increment per move</span>
+                        </p>
+                        <p>
+                            Starting numbers have been determined by random draw. The
+                            Trophy will be awarded to the player
+                            with the highest point score. Please note that points
+                            scored against players completing fewer than half their
+                            games are ineligble for determining placings. In case of a tie, the
+                            Sonneborn-Berger system will be used for tiebreaking.
+                        </p>
+                    </div>);
+                })}
             </div>
         );
     }

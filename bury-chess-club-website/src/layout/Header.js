@@ -46,6 +46,15 @@ class Header extends React.Component {
                             >Club Competitions
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink
+                                to="/games"
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "navigation-link-pending" : isActive ? "navigation-link-active" : "navigation-link"
+                                }
+                            >Games
+                            </NavLink>
+                        </li>
                     </ul>
                 </nav>
                 <div id={"social-icons"}>
