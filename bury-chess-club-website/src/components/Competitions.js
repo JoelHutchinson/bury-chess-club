@@ -40,8 +40,8 @@ class Competitions extends React.Component {
                         <h2>{competition.name}</h2>
                         <p>All games to be completed by <span className={"bold"}>{competition.endDate}</span></p>
                         <p>
-                            Time control: <span className={"bold"}>{competition.timeControlMinutes}
-                            minutes + {competition.timeControlIncrement} second increment per move</span>
+                            Time control: <span className={"bold"}>{competition.timeControlMinutes} minutes
+                            + {competition.timeControlIncrement} second increment per move</span>
                         </p>
                         <p>
                             Starting numbers have been determined by random draw. The

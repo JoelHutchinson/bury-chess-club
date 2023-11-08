@@ -10,15 +10,21 @@ class About extends React.Component {
         super(props);
 
         this.state = {
-            content: null   
+            images: []
         };
     }
 
     componentDidMount() {
         // Fetch About data when component mounts.
-        fetchData('about')
+        fetchData('images', {categories: 6})
             .then(data => {
-                this.setState({content: data})
+                this.setState({images: data.map(img => {
+                    return {
+                        title: img.acf.image.title,
+                        url: img.acf.image.url,
+                        alt: img.acf.image.alt
+                    }
+                })});
             })
             .catch(error => {
                 console.log(error);
@@ -40,8 +46,11 @@ class About extends React.Component {
                         
                     </p>
                     <div id={"club-images"} className={"image-gallery"}>
-                        <img id={"league-match-image"} src={LeagueMatchImage} alt={"Bury chess club members playing a league match."} />
-                        <img id={"league-match-closeup-image"} src={LeagueMatchImageCloseUp} alt={"Bury chess club members playing a league match with a close-up of a man in a black coat."} />
+                        {this.state.images.map(img => {
+                            return (
+                                <img key={img.title} src={img.url} alt={img.alt} />
+                            );
+                        })}
                     </div>
                 </div>
                 <hr></hr>

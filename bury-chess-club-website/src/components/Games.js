@@ -37,7 +37,7 @@ class Games extends React.Component {
                 <h2>Games of the Month</h2>
                 {this.state.games.map(game => {
                     return (
-                        <div>
+                        <div key={game.whitePlayer + "-" + game.blackPlayer + "-" + game.date}>
                             <h3>{game.date}: {game.whitePlayer} vs {game.blackPlayer} ({game.event})</h3>
                             <PGNViewer>{game.pgn}</PGNViewer>
                         </div>

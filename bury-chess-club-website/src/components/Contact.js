@@ -53,7 +53,7 @@ class Contact extends React.Component {
                     <table id={"club-administration"}>
                         <tbody>
                             {this.state.administrators.map(admin => {
-                                return (<tr>
+                                return (<tr key={admin.name}>
                                     <td className={"administrator-title"}>{admin.title}</td>
                                     <td>{admin.name}</td>
                                     <td>{admin.email}</td>
