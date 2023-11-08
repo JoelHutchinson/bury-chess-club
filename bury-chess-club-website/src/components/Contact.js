@@ -9,7 +9,8 @@ class Contact extends React.Component {
         super(props);
 
         this.state = {
-            administrators: []
+            administrators: [],
+            clubImages: []
         }
     }
 
@@ -29,7 +30,19 @@ class Contact extends React.Component {
             .catch(error => {
                 console.log(error);
             });
-        
+        fetchData('images', {categories: 5})
+            .then(data => {
+                this.setState({clubImages: data.map(img => {
+                    return {
+                        title: img.acf.image.title,
+                        url: img.acf.image.url,
+                        alt: img.acf.image.alt
+                    }
+                })});
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
     render() {
@@ -43,8 +56,11 @@ class Contact extends React.Component {
                         All ages & abilities welcome.
                     </p>
                     <div id={"venue-images"} className={"image-gallery"}>
-                        <img id={"club-exterior-image"} src={ClubExterior} alt={"An image of the Bury Sports Club from a distance."} />
-                        <img id={"club-exterior-image"} src={ClubMap} alt={"An image of the Bury Sports Club from a distance."} />
+                        {this.state.clubImages.map(img => {
+                            return (
+                                <img key={img.title} src={img.url} alt={img.alt} />
+                            );
+                        })}
                     </div>
                 </div>
                 <hr></hr>

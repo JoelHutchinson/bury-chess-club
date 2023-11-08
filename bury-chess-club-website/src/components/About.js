@@ -10,7 +10,7 @@ class About extends React.Component {
         super(props);
 
         this.state = {
-            images: []
+            clubImages: []
         };
     }
 
@@ -18,7 +18,7 @@ class About extends React.Component {
         // Fetch About data when component mounts.
         fetchData('images', {categories: 6})
             .then(data => {
-                this.setState({images: data.map(img => {
+                this.setState({clubImages: data.map(img => {
                     return {
                         title: img.acf.image.title,
                         url: img.acf.image.url,
@@ -46,7 +46,7 @@ class About extends React.Component {
                         
                     </p>
                     <div id={"club-images"} className={"image-gallery"}>
-                        {this.state.images.map(img => {
+                        {this.state.clubImages.map(img => {
                             return (
                                 <img key={img.title} src={img.url} alt={img.alt} />
                             );
