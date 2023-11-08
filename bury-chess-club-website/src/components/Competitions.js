@@ -1,5 +1,4 @@
 import React from 'react';
-import PGNViewer from './PgnViewerJS.js';
 import { fetchData } from './DataService';
 
 class Competitions extends React.Component {
@@ -36,7 +35,7 @@ class Competitions extends React.Component {
         return (
             <div className={"competitions"}>
                 {this.state.competitions.map(competition => {
-                    return(<div className={"club-competition"}>
+                    return(<div key={competition.name} className={"club-competition"}>
                         <h2>{competition.name}</h2>
                         <p>All games to be completed by <span className={"bold"}>{competition.endDate}</span></p>
                         <p>

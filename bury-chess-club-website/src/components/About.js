@@ -2,9 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { fetchData } from './DataService';
 
-import LeagueMatchImage from '../assets/bury-league-match.jpg'
-import LeagueMatchImageCloseUp from '../assets/bury-league-match-closeup.jpg'
-
 class About extends React.Component {
     constructor(props) {
         super(props);
@@ -65,8 +62,8 @@ class About extends React.Component {
                 <div className={"league-information"}>
                     <h2>League Participation</h2>
                     <p>
-                        We compete in the local <a href={"https://www.manchesterchess.org.uk/main.php"} target={"_blank"}>Manchester Chess Federation League</a>,
-                        as well as the <a href={"https://ecflms.org.uk/lms/node/52389/home"} target={"_blank"}>Bolton & District Chess League</a>.
+                        We compete in the local <a href={"https://www.manchesterchess.org.uk/main.php"} target={"_blank"} rel={"noreferrer"}>Manchester Chess Federation League</a>,
+                        as well as the <a href={"https://ecflms.org.uk/lms/node/52389/home"} target={"_blank"} rel={"noreferrer"}>Bolton & District Chess League</a>.
                     </p>
                 </div>
             </div>

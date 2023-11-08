@@ -1,6 +1,4 @@
 import React from 'react';
-import ClubExterior from '../assets/bury-sports-club-exterior.jpg'
-import ClubMap from '../assets/bury-sports-club-map.png'
 
 import { fetchData } from './DataService';
 
@@ -25,7 +23,6 @@ class Contact extends React.Component {
                         email: admin.acf.email_address
                     };
                 })});
-                console.log(this.state.administrators);
             })
             .catch(error => {
                 console.log(error);
@@ -51,7 +48,7 @@ class Contact extends React.Component {
                 <div className={"venue"}>
                     <h2>Venue</h2>
                     <p>
-                        We are located at the <a href={"http://www.burysportsclub.co.uk/"} target={"_blank"}>Bury Sports Club</a>.
+                        We are located at the <a href={"http://www.burysportsclub.co.uk/"} target={"_blank"} rel={"noreferrer"}>Bury Sports Club</a>.
                         Club night is <span className={"bold"}>Tuesday</span> at <span className={"bold"}>7:30pm</span>.<br></br>
                         All ages & abilities welcome.
                     </p>
