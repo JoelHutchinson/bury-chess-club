@@ -16,10 +16,6 @@ class Footer extends React.Component {
                     to="/privacy">
                         Privacy Policy
                     </NavLink>
-                    <NavLink
-                    to="/cookies">
-                        Cookies
-                    </NavLink>
                 </div>
                 
             </footer>

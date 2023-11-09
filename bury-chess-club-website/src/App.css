@@ -20,6 +20,8 @@
   background-color: var(--theme-color-dark);
 }
 
+
+
 h1 {
   font-size: 2.2rem;
   text-align: left;
@@ -41,11 +43,6 @@ a {
   font-weight: bold;
   text-decoration: none;
   color: var(--theme-color-moderate)
-}
-
-.text {
-  font-size: 1.8rem;
-  
 }
 
 .bold {
@@ -99,8 +96,6 @@ header {
   justify-content: flex-start;
   gap: 1%;
 }
-
-
 
 #navigation {
   
@@ -240,4 +235,129 @@ footer p {
 
 .administrator-title {
   font-weight: bold;
+}
+
+/* Small Screens & Mobile Devices */
+
+@media only screen and (max-width: 600px) {
+  /* Mobile header */
+  header {
+    background-color: var(--theme-color-dark);
+    font-weight: bold;
+    color: var(--theme-color-light);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1%;
+  }
+
+  #logo-image {
+    width: 70px;
+    height: 70px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50px;
+  }
+
+  #club-name-heading {
+    text-align: left;
+    margin: 0px 5px;
+  }
+
+  #navigation {
+    
+  }
+
+  #navigation-list {
+    padding: 0px;
+    margin: 10px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  
+  .navigation-link {
+    color: var(--theme-color-light);
+    padding: 3px 7px;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+  
+  .navigation-link:hover {
+    background-color: var(--theme-color-moderate);
+  }
+  
+  .navigation-link-active {
+    padding: 3px 7px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--theme-color-dark);
+    background-color: var(--theme-color-light);
+  }
+  
+  .navigation-link-pending {
+    padding: 3px 7px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--theme-color-dark);
+    background-color: blue;
+  }
+
+  #social-icons {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .social-icon {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* General Mobile */
+
+  .image-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    max-width: 2100px;
+    margin: 0 0;
+    padding: 10px 5px;
+  }
+
+  .image-gallery img {
+    width: 100%;
+    max-width: 168px;
+    height: 144px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .inner-page {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    margin: auto auto;
+    padding: 0%;
+    color: var(--theme-color-dark);
+    background-color: var(--theme-color-dark);
+  }
+
+  main {
+    background-color: var(--theme-color-light);
+    border-radius: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

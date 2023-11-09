@@ -6,7 +6,6 @@ import Contact from './components/Contact';
 import Competitions from './components/Competitions';
 import Games from './components/Games';
 import Privacy from './components/Privacy';
-import Cookies from './components/Cookies';
 
 import {
   createBrowserRouter,
@@ -40,10 +39,6 @@ const router = createBrowserRouter([
       {
         path: "privacy",
         element: <Privacy />
-      },
-      {
-        path: "cookies",
-        element: <Cookies />
       },
     ],
   },
