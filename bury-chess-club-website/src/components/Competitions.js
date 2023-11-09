@@ -21,7 +21,8 @@ class Competitions extends React.Component {
                     endDate: competition.acf.end_date,
                     name: competition.acf.competition_name,
                     timeControlMinutes: competition.acf.time_control_minutes,
-                    timeControlIncrement: competition.acf.time_control_increment
+                    timeControlIncrement: competition.acf.time_control_increment,
+                    description: competition.acf.description
                 };
             })});
         })
@@ -43,12 +44,7 @@ class Competitions extends React.Component {
                             + {competition.timeControlIncrement} second increment per move</span>
                         </p>
                         <p>
-                            Starting numbers have been determined by random draw. The
-                            Trophy will be awarded to the player
-                            with the highest point score. Please note that points
-                            scored against players completing fewer than half their
-                            games are ineligble for determining placings. In case of a tie, the
-                            Sonneborn-Berger system will be used for tiebreaking.
+                            {competition.description}
                         </p>
                         <hr></hr>
                     </div>);

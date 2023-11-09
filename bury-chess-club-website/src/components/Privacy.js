@@ -1,8 +1,29 @@
 import React from 'react';
+import { fetchData } from './DataService';
 
 class Privacy extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            notices: []
+        };
+    }
+
+    componentDidMount() {
+        // Fetch About data when component mounts.
+        fetchData('privacy-notice')
+            .then(data => {
+                this.setState({notices: data.map(notice => {
+                    return {
+                        heading: notice.acf.heading,
+                        text: notice.acf.text
+                    }
+                })});
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
     render() {
@@ -12,22 +33,14 @@ class Privacy extends React.Component {
                 <p>
                 We are committed to protecting the privacy and security of our website users.
                 This privacy policy outlines our practices regarding the collection, use, and
-                disclosure of personal information, even though we do not intentionally collect
-                any user information.
+                disclosure of personal information.
                 </p>
-                <h2>Information We Do Not Collect</h2>
-                <p>
-                    We want to emphasize that Bury Chess Club does not intentionally collect any
-                    user information. We do not collect, store, or process any personal data, such
-                    as names, email addresses, or any other identifying information.
-                </p>
-                <h2>Third-Party Services</h2>
-                <p>
-                Our website may contain links to third-party websites, such as chess event organizers
-                or relevant news sources. Please note that this privacy policy does not cover the practices
-                of those websites. We recommend reviewing the privacy policies of any third-party websites
-                you may visit through our platform.
-                </p>
+                {this.state.notices.map(notice => {
+                    return (<div>
+                        <h2>{notice.heading}</h2>
+                        <p>{notice.text}</p>
+                    </div>);
+                })}
             </div>
         );
     }
