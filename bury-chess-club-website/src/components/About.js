@@ -13,7 +13,7 @@ class About extends React.Component {
 
     componentDidMount() {
         // Fetch About data when component mounts.
-        fetchData('images', {categories: 6})
+        fetchData('images', {categories: 3})
             .then(data => {
                 this.setState({clubImages: data.map(img => {
                     return {

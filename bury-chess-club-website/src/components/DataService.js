@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Base URL for WordPress REST API.
-const API_BASE_URL = 'http://burychessclub.org.uk/wp-json/wp/v2/';
+const API_BASE_URL = 'https://wp.burychessclub.org.uk/wp-json/wp/v2/';
 
 // Fetch data from the API.
 export async function fetchData(endpoint, params = {}) {

@@ -50,6 +50,7 @@ class Competitions extends React.Component {
                             games are ineligble for determining placings. In case of a tie, the
                             Sonneborn-Berger system will be used for tiebreaking.
                         </p>
+                        <hr></hr>
                     </div>);
                 })}
             </div>

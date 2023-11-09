@@ -27,7 +27,7 @@ class Contact extends React.Component {
             .catch(error => {
                 console.log(error);
             });
-        fetchData('images', {categories: 5})
+        fetchData('images', {categories: 4})
             .then(data => {
                 this.setState({clubImages: data.map(img => {
                     return {
