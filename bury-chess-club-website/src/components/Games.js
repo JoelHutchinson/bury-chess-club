@@ -8,28 +8,27 @@ class Games extends React.Component {
 
         this.state = {
             games: [],
-            competitions: []
         };
     }
 
     componentDidMount() {
         // Fetch game data when component mounts.
-        fetchData('games')
-            .then(data => {
-                this.setState({games: data.map(game => {
-                    return {
-                        date: game.acf.date_played,
-                        pgn: game.acf.pgn,
-                        whitePlayer: game.acf.white_player_name,
-                        blackPlayer: game.acf.black_player_name,
-                        event: game.acf.event,
-                        description: game.acf.description
-                    };
-                })});
-            })
-            .catch(error => {
-                console.log(error);
-            });
+        Promise.all([fetchData('games'), fetchData('players')])
+        .then(([gamesData, playersData]) => {           
+            const games = gamesData.map(game => ({
+                date: game.acf.date_played,
+                pgn: game.acf.pgn,
+                whitePlayer: playersData.find(player => (player.id == game.acf.white_player[0])).acf.name,
+                blackPlayer: playersData.find(player => (player.id == game.acf.black_player[0])).acf.name,
+                event: game.acf.event,
+                description: game.acf.description
+            }));
+
+            this.setState({ games: games });
+        })
+        .catch(error => {
+            console.log(error);
+        });
     }
 
     render() {
@@ -38,12 +37,15 @@ class Games extends React.Component {
                 <h2>Games of the Month</h2>
                 {this.state.games.map(game => {
                     return (
-                        <div className={"chess-game-container"} key={game.whitePlayer + "-" + game.blackPlayer + "-" + game.date}>
-                            <h3>{game.date}: {game.whitePlayer} vs {game.blackPlayer} ({game.event})</h3>
-                            <div className={"chess-view-container"}>
-                                <PGNViewer>{game.pgn}</PGNViewer>
-                                <p>{game.description}</p>
+                        <div key={game.whitePlayer + "-" + game.blackPlayer + "-" + game.date}>
+                            <div className={"chess-game-container"}>
+                                <h3>{game.date}: {game.whitePlayer} vs {game.blackPlayer} ({game.event})</h3>
+                                <div className={"chess-view-container"}>
+                                    <PGNViewer>{game.pgn}</PGNViewer>
+                                    <p>{game.description}</p>
+                                </div>
                             </div>
+                            <hr></hr>
                         </div>
                     );
                 })}

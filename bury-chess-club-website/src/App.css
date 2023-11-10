@@ -82,6 +82,33 @@ hr {
   margin-bottom: 25px;
 }
 
+table {
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th {
+  background-color: #f2f2f2; /* Light gray background */
+  border: 1px solid #dddddd; /* Gray border */
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  border: 1px solid #dddddd; /* Gray border */
+  padding: 10px;
+}
+
+/* Add alternating row colors for better readability */
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Lighter gray background */
+}
+
+/* Hover effect for better interaction */
+tr:hover {
+  background-color: #e0e0e0; /* Light gray background on hover */
+}
+
 /* Header */
 
 header {
@@ -139,8 +166,8 @@ li {
 }
 
 #logo-image {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   padding: 0;
   margin: 0;
   border: 5px solid var(--theme-color-dark);
@@ -228,7 +255,6 @@ footer p {
 
 #club-administration {
   text-align: left;
-  border-collapse: separate;
 }
 
 #club-administration td {
@@ -239,6 +265,20 @@ footer p {
 .administrator-title {
   font-weight: bold;
 }
+
+/* Competition page */
+
+.round-robin-name {
+  font-weight: bold;
+  text-align: left;
+}
+
+.round-robin-cell {
+  margin: 5px;
+  padding: 5px;
+  margin: 0;
+}
+
 
 /* Game page */
 
@@ -378,5 +418,18 @@ footer p {
 
   footer {
     margin-bottom: 10px;
+  }
+
+  /* Game page */
+
+  .chess-game-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chess-view-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 }
