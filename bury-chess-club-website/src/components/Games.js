@@ -22,7 +22,8 @@ class Games extends React.Component {
                         pgn: game.acf.pgn,
                         whitePlayer: game.acf.white_player_name,
                         blackPlayer: game.acf.black_player_name,
-                        event: game.acf.event
+                        event: game.acf.event,
+                        description: game.acf.description
                     };
                 })});
             })
@@ -37,9 +38,12 @@ class Games extends React.Component {
                 <h2>Games of the Month</h2>
                 {this.state.games.map(game => {
                     return (
-                        <div key={game.whitePlayer + "-" + game.blackPlayer + "-" + game.date}>
+                        <div className={"chess-game-container"} key={game.whitePlayer + "-" + game.blackPlayer + "-" + game.date}>
                             <h3>{game.date}: {game.whitePlayer} vs {game.blackPlayer} ({game.event})</h3>
-                            <PGNViewer>{game.pgn}</PGNViewer>
+                            <div className={"chess-view-container"}>
+                                <PGNViewer>{game.pgn}</PGNViewer>
+                                <p>{game.description}</p>
+                            </div>
                         </div>
                     );
                 })}

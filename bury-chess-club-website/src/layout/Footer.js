@@ -10,14 +10,17 @@ class Footer extends React.Component {
     render() {
         return (
             <footer>
-                <div className={'notices'}>
+                <div className={"notices"}>
                     <p>Copyright © 2023</p>
                     <NavLink
                     to="/privacy">
                         Privacy Policy
                     </NavLink>
                 </div>
-                
+                <div id={"social-icons"}>
+                    <a className={"social-icon"} href={'https://www.facebook.com/BuryChessClub/'} target={'_blank'} rel={"noopener noreferrer"}><i id={"facebook-icon"}>f</i></a>
+                    <a className={"social-icon"} href={'https://www.chess.com/club/bury-chess-club'} target={'_blank'} rel={"noopener noreferrer"}><i id={"pawn-icon"}>♟</i></a>
+                </div>
             </footer>
         );
     }
