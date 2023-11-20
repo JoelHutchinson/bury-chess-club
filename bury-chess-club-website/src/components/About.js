@@ -7,65 +7,62 @@ class About extends React.Component {
         super(props);
 
         this.state = {
+            sections: [],
             clubImages: []
         };
     }
 
     componentDidMount() {
         // Fetch About data when component mounts.
-        fetchData('images', {categories: 3})
-            .then(data => {
-                this.setState({clubImages: data.map(img => {
-                    return {
-                        title: img.acf.image.title,
-                        url: img.acf.image.url,
-                        alt: img.acf.image.alt
-                    }
-                })});
-            })
-            .catch(error => {
-                console.log(error);
+        Promise.all([fetchData('about'), fetchData('images')])
+        .then(([aboutData, imageData]) => {
+            const aboutSections = aboutData.map(section => ({
+                heading: section.acf.heading,
+                content: section.acf.content,
+                orderIndex: section.acf.order_index,
+                images: imageData.filter(image => section.acf.images.includes(image.id)).map(imageData => ({
+                    title: imageData.acf.image.title,
+                    url: imageData.acf.image.url,
+                    alt: imageData.acf.image.alt
+                }))
+            }));
+
+            aboutSections.sort((section1, section2) => {
+                if (section1.orderIndex < section2.orderIndex) {
+                    return -1;
+                }
+                if (section2.orderIndex < section1.orderIndex) {
+                    return 1;
+                }
+                return 0;
             });
+
+            this.setState({ sections: aboutSections });
+        })
+        .catch(error => {
+            console.log(error);
+        });
     }
 
     render() {
         return (
             <div className={"about"}>
-                <div className={"about-the-club"}>
-                    <h2>About the Club</h2>
-                    <p>
-                        Bury Chess Club, located in the Greater Manchester borough of Bury provides a welcoming
-                        and engaging environment for chess players of all skill levels. We gather
-                        at the club every <span className='bold'>Tuesday at 7:30 PM</span> to participate in friendly
-                        matches and socialize. The club has members of all ages including
-                        a number of junior players, teenagers, young adults and adults.
-
-                        
-                    </p>
-                    <div id={"club-images"} className={"image-gallery"}>
-                        {this.state.clubImages.map(img => {
-                            return (
-                                <img key={img.title} src={img.url} alt={img.alt} />
-                            );
-                        })}
-                    </div>
-                </div>
-                <hr></hr>
-                <div className={"how-to-join"}>
-                    <h2>How to join</h2>
-                    <p>
-                        Discuss registration with one of our club administrators. Feel free to come down to
-                        our <NavLink to={"/contact"}>club night</NavLink> to play some games and discuss membership.
-                    </p>
-                </div>
-                <hr></hr>
-                <div className={"league-information"}>
-                    <h2>League Participation</h2>
-                    <p>
-                        We compete in the local <a href={"https://www.manchesterchess.org.uk/main.php"} target={"_blank"} rel={"noreferrer"}>Manchester Chess Federation League</a>,
-                        as well as the <a href={"https://ecflms.org.uk/lms/node/52389/home"} target={"_blank"} rel={"noreferrer"}>Bolton & District Chess League</a>.
-                    </p>
-                </div>
+                {this.state.sections.map(section => {
+                    return (
+                        <div className={"about-the-club"}>
+                            <h2>{section.heading}</h2>
+                            <p>{section.content}</p>
+                            {section.images.length > 0 ? <div id={"club-images"} className={"image-gallery"}>
+                                {section.images.map(img => {
+                                    return (
+                                        <img key={img.title} src={img.url} alt={img.alt} />
+                                    );
+                                })}
+                            </div> : undefined}
+                            <hr></hr>
+                        </div>
+                    );
+                })}
             </div>
         );
     }
