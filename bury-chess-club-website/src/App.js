@@ -21,6 +21,10 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
+        path: "/", // Set the default route to /about
+        element: <About />
+      },
+      {
         path: "about",
         element: <About />
       },
