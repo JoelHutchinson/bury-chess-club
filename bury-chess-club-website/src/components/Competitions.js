@@ -25,7 +25,7 @@ class Competitions extends React.Component {
                 timeControlMinutes: competition.acf.time_control_minutes,
                 timeControlIncrement: competition.acf.time_control_increment,
                 description: competition.acf.description,
-                matchMatrix: [["", "b 1", "b", "w"], ["w", "", "b 1/2", "w"], ["w 1/2", "b", "", "w"], ["b", "b", "b 0", ""]],
+                matchMatrix: this.getMatchMatrix(playersData.length),
                 players: playersData.filter(player => competition.acf.players.includes(player.id)).map(player => player.acf.name)
             }));
 
@@ -36,8 +36,23 @@ class Competitions extends React.Component {
         });
     }
 
-    getMatchMatrix(matches) {
+    getMatchMatrix(playerCount) {
+        let matchMatrix = [];
+        for (let i = 0; i < playerCount; i++) {
+            let playeriResults = [];
 
+            for (let j = 0; j < playerCount; j++) {
+                if (i === j) {
+                    playeriResults.push("");
+                }
+                else {
+                    playeriResults.push("x");
+                }
+            }
+            matchMatrix.push(playeriResults);
+        }
+        
+        return matchMatrix;
     }
 
     render() {
