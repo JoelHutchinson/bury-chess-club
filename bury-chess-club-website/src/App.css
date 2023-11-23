@@ -4,6 +4,7 @@
   --theme-color-moderate: #283b58;
   --theme-color-light: rgb(255, 255, 255);
   --theme-color-text: white;
+  --theme-color-faded: #263e6277;
   background-color: var(--theme-color-moderate);
 }
 
@@ -64,14 +65,10 @@ a {
 
 #main-panel {
   flex: 1;
-  
 }
 
 #facebook-panel {
   padding: 15px;
-}
-
-#facebook-panel > div {
   height: 100%;
 }
 
@@ -96,8 +93,7 @@ a {
 }
 
 hr {
-  border: var(--theme-color-moderate) solid 2px;
-  border-radius: 50%;
+  border: var(--theme-color-faded) solid 1px;
   margin-top: 25px;
   margin-bottom: 25px;
 }

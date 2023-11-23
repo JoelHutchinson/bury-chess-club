@@ -49,7 +49,7 @@ class About extends React.Component {
             <div className={"about"}>
                 {this.state.sections.map(section => {
                     return (
-                        <div className={"about-the-club"}>
+                        <div className={"about-the-club"} key={section.heading}>
                             <h2>{section.heading}</h2>
                             <p>{section.content}</p>
                             {section.images.length > 0 ? <div id={"club-images"} className={"image-gallery"}>
