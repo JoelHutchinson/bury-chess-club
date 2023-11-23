@@ -5,6 +5,8 @@ import { Outlet } from "react-router-dom";
 import Header from './Header';
 import Footer from './Footer';
 
+import FacebookTimeline from '../components/FacebookTimeline';
+
 const Layout = (props) => {
   return (
     <div className={"page"}>
@@ -15,7 +17,7 @@ const Layout = (props) => {
             <Outlet />
           </div>
           <div className={"panel"} id={"events-panel"}>
-            <h1>Events</h1>
+            <FacebookTimeline />
           </div>
         </main>
         <Footer />
