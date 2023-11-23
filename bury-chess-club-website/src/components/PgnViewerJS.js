@@ -15,7 +15,7 @@ function PGNViewer(props) {
         locale: 'pl',
         startPlay: 1,
         showResult: true,
-        boardSize: '300',
+        boardSize: '250',
         showFen: true,
         pieceStyle: 'merida',
         layout: 'left',

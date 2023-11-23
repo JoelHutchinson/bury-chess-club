@@ -18,8 +18,8 @@ class Games extends React.Component {
             const games = gamesData.map(game => ({
                 date: game.acf.date_played,
                 pgn: game.acf.pgn,
-                whitePlayer: playersData.find(player => (player.id == game.acf.white_player[0])).acf.name,
-                blackPlayer: playersData.find(player => (player.id == game.acf.black_player[0])).acf.name,
+                whitePlayer: playersData.find(player => (player.id === game.acf.white_player[0])).acf.name,
+                blackPlayer: playersData.find(player => (player.id === game.acf.black_player[0])).acf.name,
                 event: game.acf.event,
                 description: game.acf.description
             }));
@@ -42,6 +42,7 @@ class Games extends React.Component {
                                 <h3>{game.date}: {game.whitePlayer} vs {game.blackPlayer} ({game.event})</h3>
                                 <div className={"chess-view-container"}>
                                     <PGNViewer>{game.pgn}</PGNViewer>
+                                    <div className={"game-divider"}></div>
                                     <p>{game.description}</p>
                                 </div>
                             </div>

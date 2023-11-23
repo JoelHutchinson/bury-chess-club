@@ -98,6 +98,10 @@ hr {
   margin-bottom: 25px;
 }
 
+.game-divider {
+  border: var(--theme-color-faded) solid 1px;
+}
+
 table {
   border-collapse: collapse;
   margin: 20px 0;
@@ -391,6 +395,10 @@ footer p {
   }
 
   /* General Mobile */
+
+  #facebook-panel {
+    display: none;
+  }
 
   .image-gallery {
     display: flex;
