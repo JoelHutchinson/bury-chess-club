@@ -16,7 +16,7 @@ const Layout = (props) => {
           <div className={"panel"} id={"main-panel"}>
             <Outlet />
           </div>
-          <div className={"panel"} id={"events-panel"}>
+          <div className={"panel"} id={"facebook-panel"}>
             <FacebookTimeline />
           </div>
         </main>

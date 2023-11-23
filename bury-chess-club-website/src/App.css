@@ -63,12 +63,16 @@ a {
 }
 
 #main-panel {
-  width: 60%;
+  flex: 1;
   
 }
 
-#events-panel {
-  flex: 1;
+#facebook-panel {
+  padding: 15px;
+}
+
+#facebook-panel > div {
+  height: 100%;
 }
 
 .image-gallery {
