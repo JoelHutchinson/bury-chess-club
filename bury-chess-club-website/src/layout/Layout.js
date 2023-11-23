@@ -11,7 +11,12 @@ const Layout = (props) => {
       <div className={"inner-page"}>
         <Header />
         <main>
-          <Outlet />
+          <div className={"panel"} id={"main-panel"}>
+            <Outlet />
+          </div>
+          <div className={"panel"} id={"events-panel"}>
+            <h1>Events</h1>
+          </div>
         </main>
         <Footer />
       </div>

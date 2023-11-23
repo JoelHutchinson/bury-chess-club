@@ -13,11 +13,19 @@
   text-align: center;
   justify-content: flex-start;
   gap: 20px;
-  width: 80%;
+  width: 100%;
   margin: auto auto;
-  padding: 1% 1%;
   color: var(--theme-color-dark);
   background-color: var(--theme-color-dark);
+  box-sizing: border-box;
+  padding: 10px 10px 10px 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 15px;
 }
 
 h1 {
@@ -47,13 +55,21 @@ a {
   font-weight: bold;
 }
 
-main {
+.panel {
   background-color: var(--theme-color-light);
   border-radius: 15px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
+#main-panel {
+  width: 60%;
+  
+}
+
+#events-panel {
+  flex: 1;
+}
 
 .image-gallery {
   display: flex;
