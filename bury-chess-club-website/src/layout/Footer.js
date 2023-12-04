@@ -18,8 +18,8 @@ class Footer extends React.Component {
                     </NavLink>
                 </div>
                 <div id={"social-icons"}>
-                    <a className={"social-icon"} href={'https://www.facebook.com/BuryChessClub/'} target={'_blank'} rel={"noopener noreferrer"}><i id={"facebook-icon"}>f</i></a>
-                    <a className={"social-icon"} href={'https://www.chess.com/club/bury-chess-club'} target={'_blank'} rel={"noopener noreferrer"}><i id={"pawn-icon"}>♟</i></a>
+                    <a className={"social-icon"} id={"facebook-link"} href={'https://www.facebook.com/BuryChessClub/'} target={'_blank'} rel={"noopener noreferrer"}><i id={"facebook-icon"}>f</i></a>
+                    <a className={"social-icon"} id={"chesscom-link"} href={'https://www.chess.com/club/bury-chess-club'} target={'_blank'} rel={"noopener noreferrer"}><i id={"pawn-icon"}>♟</i></a>
                 </div>
             </footer>
         );
