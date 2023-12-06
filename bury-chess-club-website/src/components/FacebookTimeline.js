@@ -3,7 +3,7 @@ import { FacebookProvider, Page } from 'react-facebook';
 
 export default function FacebookTimeline() {
   const [key, setKey] = useState(0);
-  const [mainPanelHeight, setMainPanelHeight] = useState(0);
+  const [mainPanelHeight, setMainPanelHeight] = useState(800);
 
   useEffect(() => {
     setTimeout(() => {

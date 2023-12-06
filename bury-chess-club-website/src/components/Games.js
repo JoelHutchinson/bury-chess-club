@@ -1,6 +1,7 @@
 import React from 'react';
 import PGNViewer from './PgnViewerJS.js';
 import { fetchData } from './DataService';
+import GameAccordion from './GameAccordion.js';
 
 class Games extends React.Component {
     constructor(props) {
@@ -33,8 +34,9 @@ class Games extends React.Component {
 
     render() {
         return (
-            <div className={"games-of-the-month"}>
-                <h2>Games of the Month</h2>
+            <div className={"games"}>
+                <GameAccordion games={this.state.games}/>
+                <h2>Game of the Month</h2>
                 {this.state.games.map(game => {
                     return (
                         <div key={game.whitePlayer + "-" + game.blackPlayer + "-" + game.date}>
