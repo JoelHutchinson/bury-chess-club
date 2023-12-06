@@ -20,7 +20,9 @@ class GameCard extends React.Component {
                     title= {this.props.whitePlayer + " vs " + this.props.blackPlayer}
                     subheader={this.props.event + " - " + this.props.date}
                 />
-                <PGNViewer>{this.props.pgn}</PGNViewer>
+                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                    <PGNViewer>{this.props.pgn}</PGNViewer>
+                </Box>
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
                     {this.props.description}

@@ -35,13 +35,12 @@ class Games extends React.Component {
 
     render() {
         return (
-            <div className={"games"}>
-                {/*<GameAccordion games={this.state.games}/>*/}
-                <h2>Game of the Month</h2>
-                {this.state.games.map(game => {
-                    return (
-                        <div key={game.whitePlayer + game.black_player + game.event}>
-                            <GameCard
+            <>
+                <h2>Games</h2>
+                <div className={"games"}> 
+                    {this.state.games.map(game => {
+                        return (
+                            <GameCard key={game.whitePlayer + game.black_player + game.event}
                                 date={game.date}
                                 pgn={game.pgn}
                                 whitePlayer={game.whitePlayer}
@@ -49,11 +48,10 @@ class Games extends React.Component {
                                 event={game.event}
                                 description={game.description}
                             ></GameCard>
-                            <hr></hr>
-                        </div>
-                    );
-                })}
-            </div>
+                        );
+                    })}
+                </div>
+            </>
         );
     }
 }

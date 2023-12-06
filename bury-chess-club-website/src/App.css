@@ -302,14 +302,9 @@ footer p {
 
 /* Game page */
 
-.chess-game-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.chess-view-container {
-  display: flex;
-  flex-direction: row;
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Adjust the column width as needed */
   gap: 15px;
 }
 
@@ -453,12 +448,7 @@ footer p {
 
   /* Game page */
 
-  .chess-game-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .chess-view-container {
+  .games {
     display: flex;
     flex-direction: column;
     gap: 15px;
