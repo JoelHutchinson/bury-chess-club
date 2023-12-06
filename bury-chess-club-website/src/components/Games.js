@@ -2,6 +2,7 @@ import React from 'react';
 import PGNViewer from './PgnViewerJS.js';
 import { fetchData } from './DataService';
 import GameAccordion from './GameAccordion.js';
+import GameCard from './GameCard.js';
 
 class Games extends React.Component {
     constructor(props) {
@@ -35,19 +36,19 @@ class Games extends React.Component {
     render() {
         return (
             <div className={"games"}>
-                <GameAccordion games={this.state.games}/>
+                {/*<GameAccordion games={this.state.games}/>*/}
                 <h2>Game of the Month</h2>
                 {this.state.games.map(game => {
                     return (
-                        <div key={game.whitePlayer + "-" + game.blackPlayer + "-" + game.date}>
-                            <div className={"chess-game-container"}>
-                                <h3>{game.date}: {game.whitePlayer} vs {game.blackPlayer} ({game.event})</h3>
-                                <div className={"chess-view-container"}>
-                                    <PGNViewer>{game.pgn}</PGNViewer>
-                                    <div className={"game-divider"}></div>
-                                    <p>{game.description}</p>
-                                </div>
-                            </div>
+                        <div key={game.whitePlayer + game.black_player + game.event}>
+                            <GameCard
+                                date={game.date}
+                                pgn={game.pgn}
+                                whitePlayer={game.whitePlayer}
+                                blackPlayer={game.blackPlayer}
+                                event={game.event}
+                                description={game.description}
+                            ></GameCard>
                             <hr></hr>
                         </div>
                     );

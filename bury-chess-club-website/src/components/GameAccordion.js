@@ -7,32 +7,61 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import PGNViewer from './PgnViewerJS.js';
 
-export default function GameAccordion(props) {
+export default function GameAccordian(props) {
+    const dateArray = props.games.filter(game => (game.date));
+
+    const uniqueYears = [...new Set(dateArray.map(date => date.split('/')[2]))];
+
+    const uniqueMonthsByYear = {};
+    dateArray.forEach(date => {
+        const [day, month, year] = String(date).split('/');
+        if (!uniqueMonthsByYear[year]) {
+          uniqueMonthsByYear[year] = [month];
+        } else if (!uniqueMonthsByYear[year].includes(month)) {
+          uniqueMonthsByYear[year].push(month);
+        }
+      });
+
+    console.log(uniqueYears); // Array of unique years
+    console.log(uniqueMonthsByYear); // Array of unique years
+
   return (
     <div>
-    {['January', 'February', 'March', 'April', 'May', 'June', 
-    'July', 'August', 'September', 'October', 'November', 'December'].map((month, monthIndex) => {
-            return (
-                <Accordion key={month}>
-                    <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                    >
-                    <Typography>{month}</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        {
-                             props.games
-                             .filter(game => game.date.split("/")[1] == (monthIndex + 1))
-                             .map(game => {
-                                return (<PGNViewer>{game.pgn}</PGNViewer>);
-                             })
-                        }
-                    </AccordionDetails>
-                </Accordion>
-            );
-        })
+    {uniqueYears.map((year) => {
+        return (<Accordion key={year}>
+            <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                >
+                <Typography>{year}</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+                {uniqueMonthsByYear[year].map((month) => {
+                return (
+                    <Accordion key={month}>
+                        <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                        >
+                        <Typography>{month}</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            {
+                                props.games
+                                .filter(game => game.date.split("/")[1] == (parseInt(month)))
+                                .map(game => {
+                                    return (<PGNViewer>{game.pgn}</PGNViewer>);
+                                })
+                            }
+                        </AccordionDetails>
+                    </Accordion>
+                );
+            })}
+            </AccordionDetails>
+        </Accordion>);  
+    })
     }
     </div>
   );
