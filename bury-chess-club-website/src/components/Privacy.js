@@ -36,7 +36,7 @@ class Privacy extends React.Component {
                 disclosure of personal information.
                 </p>
                 {this.state.notices.map(notice => {
-                    return (<div>
+                    return (<div key={notice.heading}>
                         <h2>{notice.heading}</h2>
                         <p>{notice.text}</p>
                     </div>);
