@@ -10,7 +10,7 @@ export default function FacebookTimeline() {
       const mainPanel = document.getElementById('main-panel');
       if (mainPanel) {
         const height = mainPanel.clientHeight;
-        setMainPanelHeight(height);
+        setMainPanelHeight(height > 600 ? height : 600);
       }
       setKey(prevKey => prevKey + 1);
     }, 200)
