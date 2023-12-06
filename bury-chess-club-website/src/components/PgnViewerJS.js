@@ -20,7 +20,8 @@ function PGNViewer(props) {
         pieceStyle: 'merida',
         layout: 'left',
         theme: 'blue',
-        headers: true
+        headers: true,
+        figurine: 'alpha'
       }
     )
   })
