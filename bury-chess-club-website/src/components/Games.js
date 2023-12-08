@@ -126,7 +126,7 @@ class Games extends React.Component {
                         );
                     })}
                 </div> : null}
-                {this.state.tabValue === "two" ? <div className={"games"}>
+                {this.state.tabValue === "two" ? <div>
                     <div className={"game-search-options"}>
                         <Box display="flex" gap={2}>
                             <TextField
@@ -150,6 +150,8 @@ class Games extends React.Component {
                                 sx={{ width: 300 }}
                                 value={this.state.selectedEvent}
                                 onChange={this.handleEventChange}
+                                isOptionEqualToValue={(option, value) => option.label === value.label}
+                                getOptionLabel={(option) => option.label}
                                 renderInput={(params) => <TextField {...params} label="Event" />}
                             />
                             <IconButton aria-label="search">
@@ -157,6 +159,7 @@ class Games extends React.Component {
                             </IconButton>
                         </Box>
                     </div>
+                    <div className={"games"}>
                     {filteredGames.map((game) => (
                         <GameCard
                             key={game.whitePlayer + game.blackPlayer + game.event}
@@ -168,6 +171,7 @@ class Games extends React.Component {
                             description={game.description}
                         />
                     ))}
+                   </div>
                 </div> : null}
             </>
         );

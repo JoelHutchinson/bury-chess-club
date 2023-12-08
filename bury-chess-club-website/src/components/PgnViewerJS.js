@@ -15,13 +15,13 @@ function PGNViewer(props) {
         locale: 'pl',
         startPlay: 1,
         showResult: true,
-        boardSize: '250',
+        boardSize: props.boardSize,
         showFen: true,
         pieceStyle: 'merida',
         layout: 'left',
         theme: 'blue',
         headers: true,
-        figurine: 'alpha'
+        figurine: 'alpha',
       }
     )
   })

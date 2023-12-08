@@ -21,7 +21,7 @@ class GameCard extends React.Component {
                     subheader={this.props.event + " - " + this.props.date}
                 />
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                    <PGNViewer>{this.props.pgn}</PGNViewer>
+                    <PGNViewer boardSize={"250"}>{this.props.pgn}</PGNViewer>
                 </Box>
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
