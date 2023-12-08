@@ -308,6 +308,10 @@ footer p {
   gap: 15px;
 }
 
+.game-search-options {
+  margin-top: 15px;
+}
+
 /* Hide Facebook Timeline when screen width is small */
 @media only screen and (max-width: 1200px) {
   #facebook-panel {

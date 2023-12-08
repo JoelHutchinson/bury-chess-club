@@ -1,12 +1,16 @@
 import * as React from 'react';
 import PGNViewer from './PgnViewerJS.js';
 import { fetchData } from './DataService';
-import GameAccordion from './GameAccordion.js';
 import GameCard from './GameCard.js';
 
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
 
 class Games extends React.Component {
     constructor(props) {
@@ -46,6 +50,17 @@ class Games extends React.Component {
         });
     };
 
+    gamesToEventList(games) {
+        const eventArr = games.map(game => (game.event));
+        const uniqueEventArr = [...new Set(eventArr)];
+        
+        return uniqueEventArr.map(event => {
+            return ({
+                label: event
+            });
+        });
+    }
+
     render() {
         return (
             <>
@@ -78,6 +93,25 @@ class Games extends React.Component {
                             ></GameCard>
                         );
                     })}
+                </div> : null}
+                {this.state.tabValue === "two" ? <div className={"games"}>
+                    <div className={"game-search-options"}>
+                        <Box display="flex" gap={2}>
+                            <TextField id="outlined-basic" label="White Player" variant="outlined" />
+                            <TextField id="outlined-basic" label="Black Player" variant="outlined" />
+                            <Autocomplete
+                                disablePortal
+                                id="combo-box-demo"
+                                options={this.gamesToEventList(this.state.games)}
+                                sx={{ width: 300 }}
+                                renderInput={(params) => <TextField {...params} label="Event" />}
+                            />
+                            <IconButton aria-label="search">
+                                <SearchIcon />
+                            </IconButton>
+                        </Box>
+                    </div>
+                    {/* Games rendered here */}
                 </div> : null}
             </>
         );
