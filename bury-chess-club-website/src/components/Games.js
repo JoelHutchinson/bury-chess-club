@@ -111,7 +111,18 @@ class Games extends React.Component {
                             </IconButton>
                         </Box>
                     </div>
-                    {/* Games rendered here */}
+                    {this.state.games.map(game => {
+                        return (
+                            <GameCard key={game.whitePlayer + game.black_player + game.event}
+                                date={game.date}
+                                pgn={game.pgn}
+                                whitePlayer={game.whitePlayer}
+                                blackPlayer={game.blackPlayer}
+                                event={game.event}
+                                description={game.description}
+                            ></GameCard>
+                        );
+                    })}
                 </div> : null}
             </>
         );
