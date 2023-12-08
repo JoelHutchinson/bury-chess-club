@@ -13,7 +13,7 @@ export default function FacebookTimeline() {
         setMainPanelHeight(height > 600 ? height : 600);
       }
       setKey(prevKey => prevKey + 1);
-    }, 200)
+    }, 500)
     
   }, []);
 
