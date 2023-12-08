@@ -18,8 +18,15 @@ class Games extends React.Component {
 
         this.state = {
             games: [],
-            tabValue: 'one'
+            tabValue: 'one',
+            whitePlayerInput: '',
+            blackPlayerInput: '',
+            selectedEvent: null
         };
+
+        this.handleWhitePlayerChange = this.handleWhitePlayerChange.bind(this);
+        this.handleBlackPlayerChange = this.handleBlackPlayerChange.bind(this);
+        this.handleEventChange = this.handleEventChange.bind(this);
 
         this.handleTabChange = this.handleTabChange.bind(this);
     }
@@ -44,6 +51,23 @@ class Games extends React.Component {
         });
     }
 
+    // Input handlers
+
+    handleWhitePlayerChange (event) {
+        this.setState({ whitePlayerInput: event.target.value });
+    };
+    
+    handleBlackPlayerChange (event) {
+        this.setState({ blackPlayerInput: event.target.value });
+    };
+    
+    handleEventChange (event, value) {
+        this.setState({ selectedEvent: value });
+    };
+
+
+    // Tab handler
+
     handleTabChange (event, newValue) {
         this.setState({
             tabValue: newValue
@@ -62,6 +86,14 @@ class Games extends React.Component {
     }
 
     render() {
+        const filteredGames = this.state.games.filter((game) => {
+            return (
+                (!this.state.whitePlayerInput || game.whitePlayer.toLowerCase().includes(this.state.whitePlayerInput.toLowerCase())) &&
+                (!this.state.blackPlayerInput || game.blackPlayer.toLowerCase().includes(this.state.blackPlayerInput.toLowerCase())) &&
+                (!this.state.selectedEvent || game.event === this.state.selectedEvent.label)
+            );
+        });
+
         return (
             <>
                 <Box sx={{ width: '100%' }}>
@@ -97,13 +129,27 @@ class Games extends React.Component {
                 {this.state.tabValue === "two" ? <div className={"games"}>
                     <div className={"game-search-options"}>
                         <Box display="flex" gap={2}>
-                            <TextField id="outlined-basic" label="White Player" variant="outlined" />
-                            <TextField id="outlined-basic" label="Black Player" variant="outlined" />
+                            <TextField
+                                id="outlined-basic"
+                                label="White Player"
+                                variant="outlined"
+                                value={this.state.whitePlayerInput}
+                                onChange={this.handleWhitePlayerChange}
+                            />
+                            <TextField
+                                id="outlined-basic"
+                                label="Black Player"
+                                variant="outlined"
+                                value={this.state.blackPlayerInput}
+                                onChange={this.handleBlackPlayerChange}
+                            />
                             <Autocomplete
                                 disablePortal
                                 id="combo-box-demo"
                                 options={this.gamesToEventList(this.state.games)}
                                 sx={{ width: 300 }}
+                                value={this.state.selectedEvent}
+                                onChange={this.handleEventChange}
                                 renderInput={(params) => <TextField {...params} label="Event" />}
                             />
                             <IconButton aria-label="search">
@@ -111,18 +157,17 @@ class Games extends React.Component {
                             </IconButton>
                         </Box>
                     </div>
-                    {this.state.games.map(game => {
-                        return (
-                            <GameCard key={game.whitePlayer + game.black_player + game.event}
-                                date={game.date}
-                                pgn={game.pgn}
-                                whitePlayer={game.whitePlayer}
-                                blackPlayer={game.blackPlayer}
-                                event={game.event}
-                                description={game.description}
-                            ></GameCard>
-                        );
-                    })}
+                    {filteredGames.map((game) => (
+                        <GameCard
+                            key={game.whitePlayer + game.blackPlayer + game.event}
+                            date={game.date}
+                            pgn={game.pgn}
+                            whitePlayer={game.whitePlayer}
+                            blackPlayer={game.blackPlayer}
+                            event={game.event}
+                            description={game.description}
+                        />
+                    ))}
                 </div> : null}
             </>
         );
