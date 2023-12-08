@@ -1,8 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 import PGNViewer from './PgnViewerJS.js';
 import { fetchData } from './DataService';
 import GameAccordion from './GameAccordion.js';
 import GameCard from './GameCard.js';
+
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
 
 class Games extends React.Component {
     constructor(props) {
@@ -10,7 +14,10 @@ class Games extends React.Component {
 
         this.state = {
             games: [],
+            tabValue: 'one'
         };
+
+        this.handleTabChange = this.handleTabChange.bind(this);
     }
 
     componentDidMount() {
@@ -33,11 +40,32 @@ class Games extends React.Component {
         });
     }
 
+    handleTabChange (event, newValue) {
+        this.setState({
+            tabValue: newValue
+        });
+    };
+
     render() {
         return (
             <>
-                <h2>Games</h2>
-                <div className={"games"}> 
+                <Box sx={{ width: '100%' }}>
+                    <Tabs
+                        value={this.state.tabValue}
+                        onChange={this.handleTabChange}
+                        aria-label="game display navigation menu"
+                        textColor="secondary"
+                        indicatorColor="secondary"
+                    >
+                        <Tab
+                        value="one"
+                        label="Games of the week"
+                        />
+                        <Tab value="two" label="Search for a game" />
+                    </Tabs>
+                </Box>
+
+                {this.state.tabValue === "one" ? <div className={"games"}> 
                     {this.state.games.map(game => {
                         return (
                             <GameCard key={game.whitePlayer + game.black_player + game.event}
@@ -50,7 +78,7 @@ class Games extends React.Component {
                             ></GameCard>
                         );
                     })}
-                </div>
+                </div> : null}
             </>
         );
     }

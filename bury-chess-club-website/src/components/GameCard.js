@@ -26,7 +26,7 @@ class GameCard extends React.Component {
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
                     {this.props.description}
-                    </Typography>     
+                    </Typography>    
                 </CardContent>
             </Card>
         );
