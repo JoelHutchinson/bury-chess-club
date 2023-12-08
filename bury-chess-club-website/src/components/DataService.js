@@ -15,3 +15,16 @@ export async function fetchData(endpoint, params = {}) {
     throw error;
   }
 }
+
+// Update popularity for a game by sending a PATCH request.
+export async function updatePopularity(gameId, updatedPopularity) {
+  try {
+    const response = await axios.patch(`${API_BASE_URL}/games/${gameId}`, {
+      popularity: updatedPopularity,
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error updating popularity:', error);
+    throw error;
+  }
+}
