@@ -76,16 +76,6 @@ class Games extends React.Component {
         });
     };
 
-    // Like button handlers
-
-    handleLike (gameId) {
-
-    };
-
-    handleUnlike (gameId) {
-
-    };
-
     gamesToEventList(games) {
         const eventArr = games.map(game => (game.event));
         const uniqueEventArr = [...new Set(eventArr)];
@@ -128,6 +118,7 @@ class Games extends React.Component {
                     {this.state.games.map(game => {
                         return (
                             <GameCard key={game.whitePlayer + game.black_player + game.event}
+                                gameId={game.id}
                                 date={game.date}
                                 pgn={game.pgn}
                                 whitePlayer={game.whitePlayer}
@@ -135,8 +126,6 @@ class Games extends React.Component {
                                 event={game.event}
                                 description={game.description}
                                 likeCount={game.popularity}
-                                handleLike={this.handleLike}
-                                handleUnlike={this.handleUnlike}
                             ></GameCard>
                         );
                     })}

@@ -4,12 +4,23 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
+import { updatePopularity } from './DataService';
+
 const LikeButton = (props) => {
   const [liked, setLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(!isNaN(props.likeCount) ? parseInt(props.likeCount) : 0);
 
   const handleLikeClick = () => {
-    liked ? props.handleUnlike() : props.handleLike();
-    setLiked(!liked);
+    if (liked) {
+      //updatePopularity(props.gameId, likeCount - 1);
+      setLikeCount(prevLikeCount => prevLikeCount - 1);
+      setLiked(false);
+    }
+    else {
+      //updatePopularity(props.gameId, likeCount + 1);
+      setLikeCount(prevLikeCount => prevLikeCount + 1);
+      setLiked(true);
+    }
   };
 
   return (
@@ -18,7 +29,7 @@ const LikeButton = (props) => {
         <FavoriteIcon />
       </IconButton>
       <Typography variant="body2" color="textSecondary">
-        {props.likeCount}
+        {likeCount}
       </Typography>
     </Box>
   );
