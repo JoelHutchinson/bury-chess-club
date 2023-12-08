@@ -17,7 +17,11 @@ class GameCard extends React.Component {
     render() {
         return (
             <Card sx={{ minWidth: 275 }}>
-                <LikeButton />
+                <LikeButton
+                    likeCount={this.props.likeCount}
+                    handleLike={this.props.handleLike}
+                    handleUnlike={this.props.handleUnlike}
+                />
                 <CardHeader
                     title= {this.props.whitePlayer + " vs " + this.props.blackPlayer}
                     subheader={this.props.event + " - " + this.props.date}

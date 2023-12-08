@@ -36,12 +36,14 @@ class Games extends React.Component {
         Promise.all([fetchData('games'), fetchData('players')])
         .then(([gamesData, playersData]) => {           
             const games = gamesData.map(game => ({
+                id: game.id,
                 date: game.acf.date_played,
                 pgn: game.acf.pgn,
                 whitePlayer: playersData.find(player => (player.id === game.acf.white_player[0])).acf.name,
                 blackPlayer: playersData.find(player => (player.id === game.acf.black_player[0])).acf.name,
                 event: game.acf.event,
-                description: game.acf.description
+                description: game.acf.description,
+                popularity: game.acf.popularity
             }));
 
             this.setState({ games: games });
@@ -74,6 +76,16 @@ class Games extends React.Component {
         });
     };
 
+    // Like button handlers
+
+    handleLike (gameId) {
+
+    };
+
+    handleUnlike (gameId) {
+
+    };
+
     gamesToEventList(games) {
         const eventArr = games.map(game => (game.event));
         const uniqueEventArr = [...new Set(eventArr)];
@@ -83,7 +95,7 @@ class Games extends React.Component {
                 label: event
             });
         });
-    }
+    };
 
     render() {
         const filteredGames = this.state.games.filter((game) => {
@@ -122,6 +134,9 @@ class Games extends React.Component {
                                 blackPlayer={game.blackPlayer}
                                 event={game.event}
                                 description={game.description}
+                                likeCount={game.popularity}
+                                handleLike={this.handleLike}
+                                handleUnlike={this.handleUnlike}
                             ></GameCard>
                         );
                     })}
