@@ -7,22 +7,27 @@ import Footer from './Footer';
 
 import FacebookTimeline from '../components/FacebookTimeline';
 
+import { ThemeProvider } from '@mui/material/styles';
+import Theme from '../components/Theme'; 
+
 const Layout = (props) => {
   return (
-    <div className={"page"}>
-      <div className={"inner-page"}>
-        <Header />
-        <main>
-          <div className={"panel"} id={"main-panel"}>
-            <Outlet />
-          </div>
-          <div className={"panel"} id={"facebook-panel"}>
-            <FacebookTimeline />
-          </div>
-        </main>
-        <Footer />
+    <ThemeProvider theme={Theme}>
+      <div className={"page"}>
+        <div className={"inner-page"}>
+          <Header />
+          <main>
+            <div className={"panel"} id={"main-panel"}>
+              <Outlet />
+            </div>
+            <div className={"panel"} id={"facebook-panel"}>
+              <FacebookTimeline />
+            </div>
+          </main>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
