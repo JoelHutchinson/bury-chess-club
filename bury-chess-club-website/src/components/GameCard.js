@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import PGNViewer from './PgnViewerJS.js';
+import LikeButton from './LikeButton.js';
 
 class GameCard extends React.Component {
     constructor(props) {
@@ -16,6 +17,7 @@ class GameCard extends React.Component {
     render() {
         return (
             <Card sx={{ minWidth: 275 }}>
+                <LikeButton />
                 <CardHeader
                     title= {this.props.whitePlayer + " vs " + this.props.blackPlayer}
                     subheader={this.props.event + " - " + this.props.date}
@@ -26,7 +28,7 @@ class GameCard extends React.Component {
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
                     {this.props.description}
-                    </Typography>    
+                    </Typography>          
                 </CardContent>
             </Card>
         );
