@@ -11,34 +11,34 @@ Before you begin, ensure you have the following installed:
 
 ### Setup
 1. **Clone the repository:**
-   ```bash
+   ```
    git clone https://github.com/your-username/bury-chess-club-website.git
    ```
 2. **Navigate to the project directory:**
-    ```bash
+    ```
     cd bury-chess-club-website
     ```
 3. **Install dependencies**
-    ```bash
+    ```
     npm install
     ```
 
 ### Usage
 #### Development Mode:
 To run the project in development mode, use:
-    ```bash
+    ```
     npm start
     ```
 
 #### Run tests:
 To run tests, use:
-    ```bash
+    ```
     npm test
     ```
 
 #### Build for Production:
 To build the project for production, use:
-    ```bash
+    ```
     npm run build
     ```
 
