@@ -12,7 +12,7 @@ Before you begin, ensure you have the following installed:
 ### Setup
 1. **Clone the repository:**
    ```
-   git clone https://github.com/your-username/bury-chess-club-website.git
+   git clone https://github.com/JoelHutchinson/bury-chess-club.git
    ```
 2. **Navigate to the project directory:**
     ```
